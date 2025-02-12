@@ -1,8 +1,19 @@
 # TSAlertController
 
-[![Version](https://img.shields.io/cocoapods/v/TSAlertController.svg?style=flat)](https://cocoapods.org/pods/TSAlertController)  
-[![License](https://img.shields.io/cocoapods/l/TSAlertController.svg?style=flat)](https://cocoapods.org/pods/TSAlertController)  
-[![Platform](https://img.shields.io/cocoapods/p/TSAlertController.svg?style=flat)](https://cocoapods.org/pods/TSAlertController)  
+<div align="left">
+
+<a href="https://cocoapods.org/pods/TSAlertController">
+    <img src="https://img.shields.io/cocoapods/v/TSAlertController.svg?style=flat" alt="Version">
+</a>
+<a href="https://cocoapods.org/pods/TSAlertController">
+    <img src="https://img.shields.io/cocoapods/l/TSAlertController.svg?style=flat" alt="License">
+</a>
+<a href="https://cocoapods.org/pods/TSAlertController">
+    <img src="https://img.shields.io/cocoapods/p/TSAlertController.svg?style=flat" alt="Platform">
+</a>
+
+</div>
+
 
 ![Image1]()
 
@@ -26,11 +37,11 @@ present(alert, animated: true)
 <details>
   <summary>Preview</summary>
 
-![Image1]()
+<img src="" width="250px">
 
 </details>
 
-**TSAlertController** mimics the interface of UIAlertController to minimize the learning curve.
+TSAlertController mimics the interface of UIAlertController to minimize the learning curve.
 
 
 ### Customizing Appearance
@@ -51,7 +62,7 @@ alert.viewConfiguration.titleAttributes = [.font: .boldSystemFont(ofSize: 24)]
 <details>
   <summary>Preview</summary>
 
-![Image1]()
+<img src="" width="250px">
 
 </details>
 
@@ -83,7 +94,7 @@ present(actionSheet, animated: true)
 <details>
   <summary>Preview</summary>
 
-![Image1]()
+<img src="" width="250px">
 
 </details>
 
@@ -266,15 +277,9 @@ All types of contributions are welcome, from minor typo fixes and comment improv
 Bug reports and feature requests are also highly appreciated, and I will actively review them.  
 
 TSAlertController is continuously updated with the goal of providing an easy-to-use, modern, and elegant alert system for everyone.  
-I truly appreciate your support! 😃  
+I truly appreciate your support! 😃   
 
----
-
-### Contributors
-
-Below are the amazing contributors who have helped improve TSAlertController!  
-
-<div align="center">
+<div align="left">
 
 <!-- Replace with actual contributor images -->
 <a href="#"><img src="https://via.placeholder.com/80" width="80" height="80" style="border-radius: 50%; margin: 5px;"></a>
@@ -284,8 +289,6 @@ Below are the amazing contributors who have helped improve TSAlertController!
 <a href="#"><img src="https://via.placeholder.com/80" width="80" height="80" style="border-radius: 50%; margin: 5px;"></a>
 
 </div>
-
----
 
 ## License
 
