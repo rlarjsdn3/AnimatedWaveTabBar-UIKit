@@ -23,8 +23,8 @@ To display a simple alert:
 
 ```swift
 let alert = TSAlertController(
-    title: "",
-    message: "",
+    title: "The title of the alert.",
+    message: "Descriptive text that provides more details about the reason for the alert.",
     preferredStyle: .alert
 )
 
@@ -50,8 +50,8 @@ To customize font attributes, use `TSAlertController.ViewConfiguration`:
 
 ```swift
 let alert = TSAlertController(
-    title: "",
-    message: "",
+    title: "Current Location Not Available",
+    message: "Your current location can't be determined at this time.",
     preferredStyle: .alert
 )
 alert.viewConfiguration.titleAttributes = [.font: .boldSystemFont(ofSize: 24)]
@@ -76,11 +76,12 @@ TSAlertController also supports interactive user actions:
 
 ```swift
 let actionSheet = TSAlertController(
-    title: "",
-    message: "",
+    title: "Choose an Option",
+    message: "Select an action from the list below.",
     options: [.interactiveScaleAndDrag, .dismissOnSwipeDown, .dismissOnTapOutside],
     preferredStyle: .actionSheet
 )
+actionSheet.viewConfiguration.buttonGroupAxis = .vertical
 
 let okAction = TSAlertAction(title: "OK")
 actionSheet.addAction(okAction)
@@ -121,7 +122,7 @@ present(actionSheet, animated: true)
 <details>
   <summary>Preview</summary>
 
-![Image1]()
+<img src="" width="250px">
 
 </details>
 
@@ -144,7 +145,7 @@ The `TSAlertController.Configuration` struct defines various behaviors for the a
 
 The `TSAlertController.ViewConfiguration` struct defines various visual and layout configurations for the alert.
 
-| Name                              | Description                                                                              | Type                                         | Default |
+| Name                              |                                    Description                                           | Type                                         | Default |
 |-----------------------------------|------------------------------------------------------------------------------------------|----------------------------------------------|---------|
 | `titleHeight`                     | The fixed height of the title area. If `nil`, the height adjusts dynamically.            | `CGFloat?`                                  | `nil`   |
 | `messageHeight`                   | The fixed height of the message area. If `nil`, the height adjusts dynamically.          | `CGFloat?`                                  | `nil`   |
@@ -166,7 +167,7 @@ The `TSAlertController.ViewConfiguration` struct defines various visual and layo
 | `dimmedBackgroundViewColor`       | The background color of the dimmed overlay behind the alert.                            | `Background?`                               | `.black with 0.75 opacity` |
 | `margin`                          | The margins applied around the alert view.                                              | `LayoutMargin`                              | `.init()` |
 | `spacing`                         | The spacing settings applied within the alert layout.                                   | `LayoutSpacing`                             | `.init()` |
-| `size`                            | The size configuration of the alert.                                                    | `LayoutSize`                                | `.init(width: .proportional(minimumRatio: 0.75, maximumRatio: 0.75))` |
+| `size`                            | The size configuration of the alert.                                                    | `LayoutSize`                                | `.init()` |
 | `buttonGroupAxis`                 | The axis layout of the button group (horizontal or vertical).                           | `ButtonGroupAxis`                           | `.automatic` |
 
 ---
@@ -260,7 +261,7 @@ You can use The Swift Package Manager to install Toast-Swift by adding the descr
 
 ```swift
 dependencies: [
-    .package(url: "", from: "2.1.3")
+    .package(url: "", from: "0.1.0")
 ]
 ```
 
@@ -273,11 +274,9 @@ pod ""
 
 ## Contribution
 
-All types of contributions are welcome, from minor typo fixes and comment improvements to adding new features!  
-Bug reports and feature requests are also highly appreciated, and I will actively review them.  
+All types of contributions are welcome, from minor typo fixes and comment improvements to adding new features! Bug reports and feature requests are also highly appreciated, and I will actively review them.  
 
-TSAlertController is continuously updated with the goal of providing an easy-to-use, modern, and elegant alert system for everyone.  
-I truly appreciate your support! 😃   
+TSAlertController is continuously updated with the goal of providing an easy-to-use, modern, and elegant alert system for everyone. I truly appreciate your support! 😃   
 
 <div align="left">
 
