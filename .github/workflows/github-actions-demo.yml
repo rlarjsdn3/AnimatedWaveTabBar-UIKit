@@ -14,6 +14,9 @@ jobs:
         steps:
         - uses: actions/checkout@v4
         
-        - name: Start XCode Build 🛠️
+        - name: Set Xcode Version
+          run: sudo xcode-select -switch /Applications/Xcode16.app
+        
+        - name: Start Xcode Build 🛠️
           run: |
             xcodebuild clean test -project Demo.xcodeproj -scheme Demo -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=latest'
