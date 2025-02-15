@@ -1,26 +1,28 @@
-# workflow의 이름
 name: Run Test
 
 on:
-    # develop 브랜치에 push나 pull_request 이벤트가 일어나면 해당 workflow를 실행
     push:
         branches: [ main ]
     pull_request:
         branches: [ main ]
+    workflow_dispatch:
         
-# workflow의 실행은 하나 이상의 job으로 구성됨
 jobs:
-    # 'build'라는 단일 job을 구성
     build:
-        # job이 실핼될 환경 - 최신 macOS
         runs-on: macos-latest
         
-        # step은 job에서 실행할 일련의 작업을 나타냄
         steps:
-        # uses 키워드를 통해 Github Action에서 기본으로 제공하는 액션 사용 가능
-        uses: actions/checkout@v4
+        - uses: actions/checkout@v4
         
-        # shell을 이용해 일련의 명령어를 실행
-        - name: Start XCode Build 🛠️
+        - name: Set Specific Xcode Version
+          run: sudo xcode-select -s /Applications/Xcode_16.1.app/Contents/Developer
+        
+        - name: Show Available Xcode Versions
+          run: ls -l /Applications | grep Xcode
+        
+        - name: Show Available Simulators
+          run: xcrun simctl list devices
+        
+        - name: Start Xcode Build 🛠️
           run: |
-            xcodebuild clean test -project Demo.xcodeproj -scheme Demo -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=latest'
+            xcodebuild clean test -project Demo.xcodeproj -scheme Demo -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.1'
