@@ -1,21 +1,26 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+# workflow의 이름
+name: Run Test
 
-on: [push]
-
+on:
+    # develop 브랜치에 push나 pull_request 이벤트가 일어나면 해당 workflow를 실행
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+        
+# workflow의 실행은 하나 이상의 job으로 구성됨
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
+    # 'build'라는 단일 job을 구성
+    build:
+        # job이 실핼될 환경 - 최신 macOS
+        runs-on: macos-latest
+        
+        # step은 job에서 실행할 일련의 작업을 나타냄
+        steps:
+        # uses 키워드를 통해 Github Action에서 기본으로 제공하는 액션 사용 가능
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-
+        
+        # shell을 이용해 일련의 명령어를 실행
+        - name: Start XCode Build 🛠️
+          run: |
+            xcodebuild clean test -project Demo.xcodeproj -scheme Demo -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=latest'
