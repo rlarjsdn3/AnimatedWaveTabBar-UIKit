@@ -25,4 +25,4 @@ jobs:
         
         - name: Start Xcode Build 🛠️
           run: |
-            xcodebuild clean test -project Demo.xcodeproj -scheme Demo -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.1'
+            xcodebuild clean test -project Demo.xcodeproj -scheme Demo -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2'
