@@ -14,14 +14,14 @@ jobs:
         steps:
         - uses: actions/checkout@v4
         
+        - name: Set Specific Xcode Version
+          run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+        
         - name: Show Available Xcode Versions
           run: ls -l /Applications | grep Xcode
         
         - name: Show Available Simulators
           run: xcrun simctl list devices
-        
-        - name: Set Specific Xcode Version
-          run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
         
         - name: Start Xcode Build 🛠️
           run: |
