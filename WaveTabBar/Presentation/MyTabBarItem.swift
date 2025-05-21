@@ -9,22 +9,27 @@ import UIKit
 
 final class MyTabBarItem: UIButton {
 
-    ///
+    /// 버튼의 제목 텍스트입니다.
     private let title: String?
-    ///
+    /// 버튼에 표시할 기본 이미지입니다.
     private let image: UIImage?
-    ///
+    /// 버튼이 선택되었을 때 표시할 이미지입니다.
     private let selectedImage: UIImage?
-    ///
+    /// 버튼의 인덱스를 나타내는 정수 값입니다.
     private let index: Int
-    
-    /// <#Description#>
+
+    /// 버튼이 하이라이트 상태로 변경될 때 호출되어 상태를 업데이트합니다.
+    override var isHighlighted: Bool {
+        didSet { updateSelectionState() }
+    }
+
+    /// 커스텀 탭바 버튼을 초기화합니다.
     /// - Parameters:
-    ///   - title: <#title description#>
-    ///   - image: <#image description#>
-    ///   - selectedImage: <#selectedImage description#>
-    ///   - tint: <#tint description#>
-    ///   - index: <#index description#>
+    ///   - title: 버튼에 표시할 텍스트
+    ///   - image: 기본 상태에서 표시할 이미지 (선택 사항)
+    ///   - selectedImage: 선택된 상태에서 표시할 이미지 (선택 사항)
+    ///   - tintColor: 이미지 및 텍스트에 적용할 틴트 색상
+    ///   - index: 버튼의 위치를 나타내는 인덱스 값 (tag 용도로 사용)
     init(
         title: String?,
         image: UIImage? = nil,
@@ -46,7 +51,11 @@ final class MyTabBarItem: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    override func tintColorDidChange() {
+        self.tintColor = tintColor
+    }
+
     private func setupUI() {
         self.tag = index
         self.setImage(image, for: .normal)
@@ -67,10 +76,6 @@ final class MyTabBarItem: UIButton {
 }
 
 extension MyTabBarItem {
-
-    override func tintColorDidChange() {
-        self.tintColor = tintColor
-    }
     
     func applySelectionState(_ selectedIndex: Int) {
         if index == selectedIndex {
@@ -104,5 +109,13 @@ extension MyTabBarItem {
         ).applying(
             UIImage.SymbolConfiguration(paletteColors: [foregroundColor])
         )
+    }
+
+    private func updateSelectionState() {
+        if isHighlighted {
+            self.layer.opacity = 0.5
+        } else {
+            self.layer.opacity = 1.0
+        }
     }
 }

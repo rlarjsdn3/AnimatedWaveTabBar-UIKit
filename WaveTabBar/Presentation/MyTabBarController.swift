@@ -9,23 +9,25 @@ import UIKit
 
 final class MyTabBarController: UITabBarController {
     
-    ///
+    /// 사용자 정의 탭바를 구성하는 `MyTabBar` 인스턴스입니다.
     private let myTabBar = MyTabBar()
 
-    /// <#Description#>
+    /// 탭바 아이템에 적용할 틴트 색상입니다.
+    /// 변경 시 모든 아이템의 색상을 업데이트합니다.
     var tintColor: UIColor = .label {
         didSet { configureTabBarTint() }
     }
-    
-    /// <#Description#>
+
+    /// 현재 선택된 탭의 인덱스입니다.
+    /// 값이 변경되면 커스텀 탭바에도 선택 상태를 반영합니다.
     override var selectedIndex: Int {
         didSet { myTabBar.updateSelctedTab(selectedIndex) }
     }
-    
-    /// <#Description#>
+
+    /// 탭바에 표시할 뷰 컨트롤러들을 설정합니다.
     /// - Parameters:
-    ///   - viewControllers: <#viewControllers description#>
-    ///   - animated: <#animated description#>
+    ///   - viewControllers: 탭으로 구성할 뷰 컨트롤러 배열
+    ///   - animated: 애니메이션 적용 여부
     override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
         configureTabBarItems()
@@ -41,10 +43,10 @@ final class MyTabBarController: UITabBarController {
         configureIntialState()
     }
 
-    /// <#Description#>
+    /// 커스텀 탭바의 표시 여부를 설정합니다.
     /// - Parameters:
-    ///   - hidden: <#hidden description#>
-    ///   - animated: <#animated description#>
+    ///   - hidden: `true`일 경우 탭바를 숨기고, `false`일 경우 다시 표시합니다.
+    ///   - animated: 애니메이션을 적용할지 여부 (`true`일 경우 0.25초 동안 애니메이션 적용)
     override func setTabBarHidden(_ hidden: Bool, animated: Bool = true) {
         if hidden {
             UIView.animate(withDuration: animated ? 0.25 : 0) { [self] in
@@ -58,14 +60,12 @@ final class MyTabBarController: UITabBarController {
         }
     }
 
-    /// <#Description#>
     private func setupUI() {
         self.tabBar.isHidden = true
         view.addSubview(myTabBar)
 
         myTabBar.delegate = self
         myTabBar.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             myTabBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
             myTabBar.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
@@ -78,12 +78,8 @@ final class MyTabBarController: UITabBarController {
 
 extension MyTabBarController {
     
-    /// <#Description#>
     private func configureTabBarItems() {
         if let items = viewControllers?.compactMap(\.tabBarItem) {
-            selectedIndex = 0
-            // Stack에 아이템을 모두 추가하여 렌더링한 후,
-            // selectedIndex를 지정해야 강조 색상이 올바르게 반영됩니다.
             let myTabBarItems = items.enumerated().map {
                 MyTabBarItem(
                     title: $1.title ?? "",
@@ -96,14 +92,12 @@ extension MyTabBarController {
             myTabBar.updateTabBarItems(myTabBarItems)
         }
     }
-    
-    /// <#Description#>
+
     private func configureTabBarTint() {
         myTabBar.tintColor = tintColor
         myTabBar.reloadTabBarItem(selectedIndex)
     }
-    
-    /// <#Description#>
+
     private func configureIntialState() {
         myTabBar.animateIntialState()
     }
