@@ -12,9 +12,6 @@ final class MyTabBarController: UITabBarController {
     ///
     private let myTabBar = MyTabBar()
 
-    ///
-    private var myTabBarItems: [MyTabBarItem] = []
-    
     /// <#Description#>
     var tintColor: UIColor = .label {
         didSet { configureTabBarTint() }
@@ -70,9 +67,9 @@ final class MyTabBarController: UITabBarController {
         myTabBar.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            myTabBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
-            myTabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
-            myTabBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
+            myTabBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            myTabBar.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            myTabBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             myTabBar.heightAnchor.constraint(equalToConstant: 65)
         ])
     }
@@ -87,12 +84,12 @@ extension MyTabBarController {
             selectedIndex = 0
             // Stack에 아이템을 모두 추가하여 렌더링한 후,
             // selectedIndex를 지정해야 강조 색상이 올바르게 반영됩니다.
-            myTabBarItems = items.enumerated().map {
+            let myTabBarItems = items.enumerated().map {
                 MyTabBarItem(
                     title: $1.title ?? "",
                     image: $1.image,
                     selectedImage: $1.selectedImage,
-                    tint: myTabBar.tintColor,
+                    tintColor: tintColor,
                     tag: $0
                 )
             }
@@ -102,7 +99,7 @@ extension MyTabBarController {
     
     /// <#Description#>
     private func configureTabBarTint() {
-        myTabBar.updateTintColor(tintColor)
+        myTabBar.tintColor = tintColor
         myTabBar.reloadTabBarItem(selectedIndex)
     }
     
@@ -114,7 +111,11 @@ extension MyTabBarController {
 
 extension MyTabBarController: MyTabBarDelegate {
     
-    func tabBar(_ tabBar: MyTabBar, didSelect items: MyTabBarItem, at index: Int) {
+    func tabBar(
+        _ tabBar: MyTabBar,
+        didSelect items: MyTabBarItem,
+        at index: Int
+    ) {
         selectedIndex = index
     }
 }
@@ -149,7 +150,7 @@ extension MyTabBarController: MyTabBarDelegate {
         [firstViewController, secondViewController, thirdViewController, fourthViewController],
         animated: false
     )
-    tabBarController.tintColor = .systemRed
+    tabBarController.tintColor = .systemMint
 //    tabBarController.setTabBarHidden(true)
     return tabBarController
 }

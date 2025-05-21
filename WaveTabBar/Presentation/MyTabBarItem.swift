@@ -8,27 +8,38 @@
 import UIKit
 
 final class MyTabBarItem: UIButton {
-    
+
+    ///
     private let title: String?
+    ///
     private let image: UIImage?
+    ///
     private let selectedImage: UIImage?
-    private var tint: UIColor?
+    ///
     private let index: Int
     
+    /// <#Description#>
+    /// - Parameters:
+    ///   - title: <#title description#>
+    ///   - image: <#image description#>
+    ///   - selectedImage: <#selectedImage description#>
+    ///   - tint: <#tint description#>
+    ///   - index: <#index description#>
     init(
         title: String?,
         image: UIImage? = nil,
         selectedImage: UIImage? = nil,
-        tint: UIColor?,
+        tintColor: UIColor?,
         tag index: Int
     ) {
         self.title = title
         self.image = image
         self.selectedImage = selectedImage
-        self.tint = tint
         self.index = index
         super.init(frame: .zero)
         
+        self.tintColor = tintColor
+
         setupUI()
     }
     
@@ -56,15 +67,15 @@ final class MyTabBarItem: UIButton {
 }
 
 extension MyTabBarItem {
-    
-    func setTintColor(_ tint: UIColor) {
-        self.tint = tint
+
+    override func tintColorDidChange() {
+        self.tintColor = tintColor
     }
     
     func applySelectionState(_ selectedIndex: Int) {
         if index == selectedIndex {
-            self.configuration?.attributedTitle = attributedTitle(tint ?? .black)
-            self.configuration?.preferredSymbolConfigurationForImage = symbolConfiguration(tint ?? .black)
+            self.configuration?.attributedTitle = attributedTitle(tintColor ?? .black)
+            self.configuration?.preferredSymbolConfigurationForImage = symbolConfiguration(tintColor ?? .black)
 
             if let selectedImage = selectedImage {
                 self.setImage(selectedImage, for: .normal)

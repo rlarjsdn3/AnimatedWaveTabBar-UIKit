@@ -9,6 +9,7 @@ import UIKit
 
 @MainActor
 protocol MyTabBarDelegate: AnyObject {
+
     /// <#Description#>
     /// - Parameters:
     ///   - tabBar: <#tabBar description#>
@@ -23,19 +24,20 @@ protocol MyTabBarDelegate: AnyObject {
 
 final class MyTabBar: UIView {
 
+    enum Metric {
+        /// <#Description#>
+        static let stackHorizontalPadding: CGFloat = 20
+    }
+
     private let container = UIView()
     private let stackView = UIStackView()
-    
+    private let circle = Circle()
+    private let wavyBottom = Wavy()
+
     /// <#Description#>
     private var tabBarItems: [MyTabBarItem] = [] {
         didSet { self.layoutIfNeeded() }
     }
-    
-    /// <#Description#>
-    private let circle = Circle()
-    
-    /// <#Description#>
-    private let wavyBottom = Wavy()
 
     ///
     private var currentIndex: Int = 0
@@ -54,12 +56,12 @@ final class MyTabBar: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-#warning("탭뷰가 hidden되었다가 다시 보일 때, 버튼 위치가 이상해지는 문제 수정")
-        // 탭뷰가 사라질 때 layoutsubviews가 한번 호출됨
-        // 다시 나타날 때도 또 호출되고
-        let item = tabBarItems[currentIndex]
-        applyWavyBottomMask(item.center.x)
-        animateCircle(to: item.center.x, withDuration: 0)
+        retainPositionAtCurrentIndex()
+    }
+
+    override func tintColorDidChange() {
+        circle.tintColor = tintColor
+        tabBarItems.forEach { $0.tintColor = tintColor }
     }
 
     /// <#Description#>
@@ -88,9 +90,9 @@ final class MyTabBar: UIView {
 
         container.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: Metric.stackHorizontalPadding),
             stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -Metric.stackHorizontalPadding),
         ])
 
         self.addSubview(circle)
@@ -108,7 +110,7 @@ final class MyTabBar: UIView {
         delegate?.tabBar(self, didSelect: sender, at: sender.tag)
 
         currentIndex = sender.tag
-        let targetOffsetX = self.tabBarItems[currentIndex].center.x
+        let targetOffsetX = targetOffsetX(currentIndex)
         animate(currentIndex, to: targetOffsetX)
 
         //
@@ -133,11 +135,17 @@ final class MyTabBar: UIView {
 extension MyTabBar {
     
     /// <#Description#>
+    private func retainPositionAtCurrentIndex() {
+        let targetOffetX = targetOffsetX(currentIndex)
+        applyWavyBottomMask(targetOffetX)
+        animateCircle(to: targetOffetX, withDuration: 0)
+    }
+
+    /// <#Description#>
     func animateIntialState() {
-        if let firstItem = tabBarItems.first {
-            let selectedIndex = 0
-            let targetOffsetX = firstItem.center.x
-            animate(selectedIndex, to: targetOffsetX, withDuration: 0.0)
+        if let _ = tabBarItems.first {
+            let targetOffsetX = targetOffsetX(0)
+            animate(0, to: targetOffsetX, withDuration: 0.0)
             applyWavyBottomMask(targetOffsetX)
         }
     }
@@ -213,12 +221,6 @@ extension MyTabBar {
 extension MyTabBar {
 
     /// <#Description#>
-    func updateTintColor(_ tintColor: UIColor) {
-        circle.tintColor = tintColor
-        tabBarItems.forEach { $0.setTintColor(tintColor) }
-    }
-
-    /// <#Description#>
     /// - Parameter selectedIndex: <#selectedIndex description#>
     func updateSelctedTab(_ selectedIndex: Int) {
         tabBarItems.forEach { item in
@@ -244,5 +246,16 @@ extension MyTabBar {
     /// - Parameter selectedIndex: <#selectedIndex description#>
     func reloadTabBarItem(_ selectedIndex: Int) {
         tabBarItems[selectedIndex].applySelectionState(selectedIndex)
+    }
+}
+
+
+extension MyTabBar {
+    
+    /// <#Description#>
+    /// - Parameter currentIndex: <#currentIndex description#>
+    /// - Returns: <#description#>
+    private func targetOffsetX(_ currentIndex: Int) -> CGFloat {
+        tabBarItems[currentIndex].center.x + Metric.stackHorizontalPadding
     }
 }
