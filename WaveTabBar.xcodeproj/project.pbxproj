@@ -6,57 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		C7C062902D604E8A00FC26A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C7783C0A2D604E5A00CD73C7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C7783C112D604E5A00CD73C7;
-			remoteInfo = Demo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		C7783C122D604E5A00CD73C7 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7C0628C2D604E8A00FC26A4 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7C062952D604F3C00FC26A4 /* Demo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Demo.xctestplan; sourceTree = "<group>"; };
+		C7F080852D9F56C400A816CD /* WaveTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaveTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C7783C242D604E5B00CD73C7 /* Exceptions for "Demo" folder in "Demo" target */ = {
+		C7F080972D9F56C400A816CD /* Exceptions for "WaveTabBar" folder in "WaveTabBar" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
-			target = C7783C112D604E5A00CD73C7 /* Demo */;
+			target = C7F080842D9F56C400A816CD /* WaveTabBar */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C7783C142D604E5A00CD73C7 /* Demo */ = {
+		C7F080872D9F56C400A816CD /* WaveTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				C7783C242D604E5B00CD73C7 /* Exceptions for "Demo" folder in "Demo" target */,
+				C7F080972D9F56C400A816CD /* Exceptions for "WaveTabBar" folder in "WaveTabBar" target */,
 			);
-			path = Demo;
-			sourceTree = "<group>";
-		};
-		C7C0628D2D604E8A00FC26A4 /* DemoTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DemoTests;
+			path = WaveTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C7783C0F2D604E5A00CD73C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C7C062892D604E8A00FC26A4 /* Frameworks */ = {
+		C7F080822D9F56C400A816CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,21 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C7783C092D604E5A00CD73C7 = {
+		C7F0807C2D9F56C400A816CD = {
 			isa = PBXGroup;
 			children = (
-				C7C062952D604F3C00FC26A4 /* Demo.xctestplan */,
-				C7783C142D604E5A00CD73C7 /* Demo */,
-				C7C0628D2D604E8A00FC26A4 /* DemoTests */,
-				C7783C132D604E5A00CD73C7 /* Products */,
+				C7F080872D9F56C400A816CD /* WaveTabBar */,
+				C7F080862D9F56C400A816CD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C7783C132D604E5A00CD73C7 /* Products */ = {
+		C7F080862D9F56C400A816CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7783C122D604E5A00CD73C7 /* Demo.app */,
-				C7C0628C2D604E8A00FC26A4 /* DemoTests.xctest */,
+				C7F080852D9F56C400A816CD /* WaveTabBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,99 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7783C112D604E5A00CD73C7 /* Demo */ = {
+		C7F080842D9F56C400A816CD /* WaveTabBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7783C252D604E5B00CD73C7 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildConfigurationList = C7F080982D9F56C400A816CD /* Build configuration list for PBXNativeTarget "WaveTabBar" */;
 			buildPhases = (
-				C7783C0E2D604E5A00CD73C7 /* Sources */,
-				C7783C0F2D604E5A00CD73C7 /* Frameworks */,
-				C7783C102D604E5A00CD73C7 /* Resources */,
+				C7F080812D9F56C400A816CD /* Sources */,
+				C7F080822D9F56C400A816CD /* Frameworks */,
+				C7F080832D9F56C400A816CD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				C7783C142D604E5A00CD73C7 /* Demo */,
+				C7F080872D9F56C400A816CD /* WaveTabBar */,
 			);
-			name = Demo;
+			name = WaveTabBar;
 			packageProductDependencies = (
 			);
-			productName = Demo;
-			productReference = C7783C122D604E5A00CD73C7 /* Demo.app */;
+			productName = UIKitTemplate;
+			productReference = C7F080852D9F56C400A816CD /* WaveTabBar.app */;
 			productType = "com.apple.product-type.application";
-		};
-		C7C0628B2D604E8A00FC26A4 /* DemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C7C062942D604E8A00FC26A4 /* Build configuration list for PBXNativeTarget "DemoTests" */;
-			buildPhases = (
-				C7C062882D604E8A00FC26A4 /* Sources */,
-				C7C062892D604E8A00FC26A4 /* Frameworks */,
-				C7C0628A2D604E8A00FC26A4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C7C062912D604E8A00FC26A4 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				C7C0628D2D604E8A00FC26A4 /* DemoTests */,
-			);
-			name = DemoTests;
-			packageProductDependencies = (
-			);
-			productName = DemoTests;
-			productReference = C7C0628C2D604E8A00FC26A4 /* DemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C7783C0A2D604E5A00CD73C7 /* Project object */ = {
+		C7F0807D2D9F56C400A816CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					C7783C112D604E5A00CD73C7 = {
+					C7F080842D9F56C400A816CD = {
 						CreatedOnToolsVersion = 16.2;
-					};
-					C7C0628B2D604E8A00FC26A4 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = C7783C112D604E5A00CD73C7;
 					};
 				};
 			};
-			buildConfigurationList = C7783C0D2D604E5A00CD73C7 /* Build configuration list for PBXProject "Demo" */;
+			buildConfigurationList = C7F080802D9F56C400A816CD /* Build configuration list for PBXProject "WaveTabBar" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C7783C092D604E5A00CD73C7;
+			mainGroup = C7F0807C2D9F56C400A816CD;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = C7783C132D604E5A00CD73C7 /* Products */;
+			productRefGroup = C7F080862D9F56C400A816CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7783C112D604E5A00CD73C7 /* Demo */,
-				C7C0628B2D604E8A00FC26A4 /* DemoTests */,
+				C7F080842D9F56C400A816CD /* WaveTabBar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C7783C102D604E5A00CD73C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C7C0628A2D604E8A00FC26A4 /* Resources */ = {
+		C7F080832D9F56C400A816CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,14 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C7783C0E2D604E5A00CD73C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C7C062882D604E8A00FC26A4 /* Sources */ = {
+		C7F080812D9F56C400A816CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,72 +137,66 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		C7C062912D604E8A00FC26A4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C7783C112D604E5A00CD73C7 /* Demo */;
-			targetProxy = C7C062902D604E8A00FC26A4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		C7783C262D604E5B00CD73C7 /* Debug */ = {
+		C7F080992D9F56C400A816CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4DQM269FVB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = WaveTabBar/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.UIKitTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C7783C272D604E5B00CD73C7 /* Release */ = {
+		C7F0809A2D9F56C400A816CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4DQM269FVB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = WaveTabBar/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.UIKitTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		C7783C282D604E5B00CD73C7 /* Debug */ = {
+		C7F0809B2D9F56C400A816CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -334,7 +259,7 @@
 			};
 			name = Debug;
 		};
-		C7783C292D604E5B00CD73C7 /* Release */ = {
+		C7F0809C2D9F56C400A816CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -390,75 +315,28 @@
 			};
 			name = Release;
 		};
-		C7C062922D604E8A00FC26A4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4DQM269FVB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.DemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Demo";
-			};
-			name = Debug;
-		};
-		C7C062932D604E8A00FC26A4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4DQM269FVB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kimsowol.DemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Demo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7783C0D2D604E5A00CD73C7 /* Build configuration list for PBXProject "Demo" */ = {
+		C7F080802D9F56C400A816CD /* Build configuration list for PBXProject "WaveTabBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C7783C282D604E5B00CD73C7 /* Debug */,
-				C7783C292D604E5B00CD73C7 /* Release */,
+				C7F0809B2D9F56C400A816CD /* Debug */,
+				C7F0809C2D9F56C400A816CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7783C252D604E5B00CD73C7 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+		C7F080982D9F56C400A816CD /* Build configuration list for PBXNativeTarget "WaveTabBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C7783C262D604E5B00CD73C7 /* Debug */,
-				C7783C272D604E5B00CD73C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C7C062942D604E8A00FC26A4 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C7C062922D604E8A00FC26A4 /* Debug */,
-				C7C062932D604E8A00FC26A4 /* Release */,
+				C7F080992D9F56C400A816CD /* Debug */,
+				C7F0809A2D9F56C400A816CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C7783C0A2D604E5A00CD73C7 /* Project object */;
+	rootObject = C7F0807D2D9F56C400A816CD /* Project object */;
 }

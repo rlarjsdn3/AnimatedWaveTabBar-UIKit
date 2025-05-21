@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Demo
+//  UIKitTemplate
 //
-//  Created by 김건우 on 2/15/25.
+//  Created by 김건우 on 4/4/25.
 //
 
 import UIKit
