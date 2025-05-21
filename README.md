@@ -8,4 +8,4 @@
 
 | 1️⃣  | 2️⃣ |
 | :-: | :-: |
-|     |     |
+|  <img src="./screenshots/1.png" alt="drawing" width="250"/>   |  <img src="./screenshots/2.gif" alt="drawing" width="250"/>   |
